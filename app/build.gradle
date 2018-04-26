@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "anetpayscom.siddh.anetbusiness"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+
+        main {
+
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java','.apt_generated']
+            aidl.srcDirs = ['src/main/aidl','.apt_generated']
+            assets.srcDirs = ['src/main/assets']
+            res.srcDirs =
+                    [
+                            'src/main/res/layouts/login',
+                            'src/main/res/layouts/splashscreen',
+                            'src/main/res/layouts/ui',
+                            'src/main/res/layouts',
+                            'src/main/res'
+                    ]
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //loliipin
+    implementation project(':lollipinview')
+    implementation 'uk.me.lewisdeane.ldialogs:ldialogs:1.2.0@aar'
+    //drawer
+    implementation 'com.mikepenz:fontawesome-typeface:4.7.0.1@aar'
+    implementation 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
+    implementation 'com.mikepenz:crossfader:1.5.1@aar'
+    implementation 'com.github.bumptech.glide:glide:3.8.0'  //glide
+    implementation('com.mikepenz:materialdrawer:6.0.7@aar') {
+        transitive = true
+    }
+    //retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //reader
+    implementation 'com.github.nisrulz:qreader:2.1.1'
+    //dialog
+    implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
+}
+
+allprojects {
+    repositories {
+        maven{
+            url "https://github.com/omadahealth/omada-nexus/raw/master/release"
+        }
+        jcenter()
+
+    }
+}
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '25.3.0'
+            }
+        }
+    }
+}

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/firstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/userFirstName"
+        android:layout_marginTop="75dp"
+        android:layout_marginStart="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        />
+
+    <TextView
+        android:id="@+id/firstNameEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/firstName"
+        android:layout_alignParentEnd="true"
+        android:ems="10"
+        android:hint="@string/hintFIrstName"
+        />
+
+    <TextView
+        android:id="@+id/fatherName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/userFatherName"
+        android:layout_below="@id/firstName"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        />
+
+    <TextView
+        android:id="@+id/fatherNameEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fatherName"
+        android:layout_alignParentEnd="true"
+        android:ems="10"
+        android:hint="@string/hintFatherName" />
+
+    <TextView
+        android:id="@+id/motherName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/userMotherName"
+        android:layout_below="@id/fatherName"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        />
+
+    <TextView
+        android:id="@+id/motherNameEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/motherName"
+        android:layout_alignParentEnd="true"
+        android:ems="10"
+        android:hint="@string/hintMotherName" />
+
+    <TextView
+        android:id="@+id/userMobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/userMobileNumber"
+        android:layout_below="@id/motherName"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        />
+
+    <TextView
+        android:id="@+id/mobileNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/userMobile"
+        android:layout_alignParentEnd="true"
+        android:ems="10"
+        android:hint="@string/hintMobileNumber"
+        />
+
+    <TextView
+        android:id="@+id/emailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/userEmailID"
+        android:layout_below="@id/userMobile"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        />
+
+    <TextView
+        android:id="@+id/emailaddressEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/emailAddress"
+        android:layout_alignParentEnd="true"
+        android:ems="10"
+        android:hint="@string/hintEmailAddress" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/userAddress"
+        android:layout_below="@id/emailAddress"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        />
+
+    <TextView
+        android:id="@+id/addressEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/address"
+        android:layout_alignParentEnd="true"
+        android:ems="10"
+        android:hint="@string/hintAddress"
+        />
+
+    <TextView
+        android:id="@+id/pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/fatherName"
+        android:layout_below="@id/address"
+        android:layout_marginTop="45dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:text="@string/userPIN" />
+
+    <Button
+        android:id="@+id/changePin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pin"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="47dp"
+        android:text="@string/userChangePIN" />
+
+    <TextView
+        android:id="@+id/changeInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="65dp"
+        android:paddingEnd="10dp"
+        android:layout_below="@id/pin"
+        android:layout_marginTop="20dp"
+        android:paddingStart="10dp"
+        android:text="@string/changeInfoTextString" />
+
+</RelativeLayout>
+</ScrollView>

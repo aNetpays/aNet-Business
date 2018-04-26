@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">aNet-Business</string>
+    <string name="line_1">Loading</string>
+    <string name="line_2">Please Wait</string>
+
+    //login activity starts
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="show_pwd">Show Password</string>
+    <string name="hide_pwd">Hide Password</string>
+    <string name="forgot">Forgot password?</string>
+    <string name="closebutton">Close Button for Activity</string>
+    <string name="newUser">Not a Member yet? Sign Up here.</string>
+    <string name="fullName">Full Name</string>
+    <string name="mobileNumber">Mobile Number</string>
+    <string name="location">Location</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="terms_conditions">By clicking SignUp you agree all the Terms and Conditions.</string>
+    <string name="signUp">SIGN UP</string>
+    <string name="already_user">Already have Account? Login here.</string>
+    <string name="registered_emailid">Please enter your Registered Email Id below:</string>
+    <string name="submit">SUBMIT</string>
+    <string name="back">BACK</string>
+    <string name="login_text">LOGIN</string>
+
+
+    <string name="activity_dialog_title">Forgot your Pincode?</string>
+    <string name="activity_dialog_accept">OK</string>
+    <string name="activity_dialog_decline">"Cancel"</string>
+    <string name="activity_dialog_content">Please Contact Customer Service Department for further instructions.</string>
+
+    //main activity
+    <string name="ddd"/>
+
+    //QR reader
+    <string name="intro_text">Point the camera view to a QR Code to read the information</string>
+    <string name="restart_activity">Restart Activity</string>
+    <string name="stop_start_qreader">Stop QREader</string>
+
+    //UserProfile
+    <string name="userFirstName">First Name</string>
+    <string name="userFatherName">Father\'s Name</string>
+    <string name="userMotherName">Mother\'s Name</string>
+    <string name="userMobileNumber">Cellular Number</string>
+    <string name="userEmailID">Email Address</string>
+    <string name="userAddress">Postal Address</string>
+    <string name="userPIN">PIN Number</string>
+    <string name="userChangePIN">Change PIN</string>
+
+    <string name="hintFIrstName">Enter Your Name</string>
+    <string name="hintFatherName">Enter Father\'s Name</string>
+    <string name="hintMotherName">Enter Mother\'s Name</string>
+    <string name="hintAddress">Enter Postal Address</string>
+    <string name="hintMobileNumber">Enter Mobile Number</string>
+    <string name="hintEmailAddress">Enter Email Address</string>
+    <string name="changeInfoString">Change Personal Information</string>
+    <string name="changeInfoTextString"><![CDATA[Please Tap to change your Personal Information. <b>Only Mobile Number and Address can be changed due to security reasons.</b> ]]></string>
+
+    //dialog change
+    <string name="dialogTitlePhoneNumber">Edit Phone Number</string>
+    <string name="phoneBody">Please Update your Mobile Number</string>
+    <string name="phoneHint">Enter your New Mobile Number</string>
+    <string name="phoneError">New Number cannot be same as the old number</string>
+
+    <string name="dialogTitleAddress">Edit Address</string>
+    <string name="addressBody">Please Update your Address</string>
+    <string name="addressHint">Enter your new Address</string>
+    <string name="addressError">New Address cannot be same as that of the old Address</string>
+    <string name="submitDialog">Submit</string>
+
+    //invoice fragment
+    <string name="startPaymentText"> Charge</string>
+    <string name="collectMoneyHint">Enter amount to be collected</string>
+</resources>
