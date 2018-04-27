@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:keyboard="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -78,67 +79,20 @@
                 android:id="@+id/topPanel"
                 >
 
-                <EditText
+                <TextView
                     android:id="@+id/editText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_marginTop="45dp"
                     android:ems="10"
-                    android:inputType="numberDecimal"
                     android:hint="@string/collectMoneyHint"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/topPanel"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="40dp"
-                android:id="@+id/gridNumberRelative"
-                >
-                <GridLayout
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:columnCount="3"
-                    android:orientation="horizontal"
-                    android:id="@+id/gridNumbers"
-                    >
-                    <Button android:text="1" />
-
-                    <Button android:text="2" />
-
-                    <Button android:text="3" />
-
-                    <Button android:text="4" />
-
-                    <Button android:text="5" />
-
-                    <Button android:text="6" />
-
-                    <Button android:text="7" />
-
-                    <Button android:text="8" />
-
-                    <Button android:text="9" />
-
-
-                    <Button
-                        android:layout_columnSpan="2"
-                        android:layout_gravity="fill"
-                        android:text="0" />
-
-                    <Button android:text="." />
-
-                </GridLayout>
             </RelativeLayout>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/startPayment"
                 android:text="@string/startPaymentText"
-                android:layout_below="@+id/gridNumberRelative"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="45dp"
                 />

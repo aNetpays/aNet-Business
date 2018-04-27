@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="anetpays.com.siddh.anetbusiness">
+    package="in.anetpays.siddhant.anet_business">
 
     <application
         android:allowBackup="true"
@@ -37,7 +37,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"
-        android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Extras.CustomPinActivity"/>
+
     </application>
 </manifest>

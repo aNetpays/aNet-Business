@@ -3,14 +3,13 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "anetpayscom.siddh.anetbusiness"
+        applicationId "in.anetpays.siddhant.anet_business"
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -42,19 +41,22 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    //loliipin
-    implementation project(':lollipinview')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'uk.me.lewisdeane.ldialogs:ldialogs:1.2.0@aar'
     //drawer
     implementation 'com.mikepenz:fontawesome-typeface:4.7.0.1@aar'
     implementation 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
     implementation 'com.mikepenz:crossfader:1.5.1@aar'
-    implementation 'com.github.bumptech.glide:glide:3.8.0'  //glide
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    //glide
     implementation('com.mikepenz:materialdrawer:6.0.7@aar') {
         transitive = true
     }
@@ -65,15 +67,9 @@ dependencies {
     implementation 'com.github.nisrulz:qreader:2.1.1'
     //dialog
     implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
-}
-
-allprojects {
-    repositories {
-        maven{
-            url "https://github.com/omadahealth/omada-nexus/raw/master/release"
-        }
-        jcenter()
-
+    //lollipin
+    implementation ('com.github.omadahealth:lollipin:2.1.0@aar') {
+        transitive = true
     }
 }
 configurations.all {
@@ -84,5 +80,14 @@ configurations.all {
                 details.useVersion '25.3.0'
             }
         }
+    }
+}
+allprojects {
+    repositories {
+        maven{
+            url "https://github.com/omadahealth/omada-nexus/raw/master/release"
+        }
+        jcenter()
+
     }
 }

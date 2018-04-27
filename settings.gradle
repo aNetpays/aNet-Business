@@ -1,2 +1,1 @@
-include ':app', ':lollipinview'
-project(':lollipinview').projectDir = new File('lollipin')
+include ':app'
