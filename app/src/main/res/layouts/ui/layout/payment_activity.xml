@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:keyboard="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coOrdinatorStartPayment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:context=".UI.StartPayment"
+        android:id="@+id/enterAmount"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:id="@+id/topPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/amount"
+                    style="@style/Base.TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="48dp"
+                    android:hint="@string/collectMoneyHint"
+                    android:textSize="40sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:layout_marginBottom="50dp"
+                    android:id="@+id/innerRelative"
+                    android:layout_below="@id/amount"
+                   >
+
+                <com.davidmiguel.numberkeyboard.NumberKeyboard
+                    android:id="@+id/numberKeyboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:paddingBottom="25dp"
+                    keyboard:keyboardType="decimal">
+
+                </com.davidmiguel.numberkeyboard.NumberKeyboard>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+        <Button
+            android:id="@+id/startPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"
+            android:background="#5a5"
+            android:textColor="#fff"
+            android:text="@string/startPaymentText"
+            />
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

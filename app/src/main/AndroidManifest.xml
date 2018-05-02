@@ -2,6 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="in.anetpays.siddhant.anet_business">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -39,6 +42,9 @@
         <activity android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Extras.CustomPinActivity"/>
+        <activity android:name=".UI.StartPayment"/>
+        <activity android:name=".UI.AcceptPayment"/>
+        <activity android:name=".UI.TermsAndConditions"/>
 
     </application>
 </manifest>

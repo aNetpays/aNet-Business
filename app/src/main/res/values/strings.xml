@@ -35,8 +35,7 @@
 
     //QR reader
     <string name="intro_text">Point the camera view to a QR Code to read the information</string>
-    <string name="restart_activity">Restart Activity</string>
-    <string name="stop_start_qreader">Stop QREader</string>
+    <string name="stop_start_qreader">Start Again</string>
 
     //UserProfile
     <string name="userFirstName">First Name</string>
@@ -71,5 +70,21 @@
 
     //invoice fragment
     <string name="startPaymentText"> Charge</string>
-    <string name="collectMoneyHint">Enter amount to be collected</string>
+    <string name="collectMoneyHint">Enter amount</string>
+    <string name="activityTitle">Enter Amount</string>
+    <string name="moneySymbol">$</string>
+    <string name="zero">0</string>
+    //accept Fragment
+    <string name="acceptTitle">Read QR Code</string>
+
+    //Terms and Conditions
+    <string name="termsTitle">Terms And Conditions</string>
+
+    //AboutApp
+
+    <string name="TermsAndConditionsString">Terms and Conditions of Usage</string>
+    <string name="PrivacyNotice">Privacy Notice</string>
+    <string name="FAQString"> Frequently Asked Questions</string>
+    <string name="VersionString">Version is : </string>
+
 </resources>

@@ -1,59 +1,66 @@
 package in.anetpays.siddhant.anet_business.UI;
 
+import android.Manifest;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.support.annotation.NonNull;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.SurfaceView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-
 import in.anetpays.siddhant.anet_business.Constants.SharedPreferencesConstants;
+import in.anetpays.siddhant.anet_business.MainActivity;
 import in.anetpays.siddhant.anet_business.R;
 import github.nisrulz.qreader.QRDataListener;
 import github.nisrulz.qreader.QREader;
-
 
 /**
  * Created by siddh on 19-02-2018.
  */
 
-public class AcceptPayment extends Fragment implements View.OnClickListener
+public class AcceptPayment extends AppCompatActivity implements View.OnClickListener
 {
-    private TextView textView;
+    private TextView AmountView, infoView;
     private SurfaceView surfaceView;
     private QREader qrEader;
     private SharedPreferences preferences;
-    private Button stateButton, restartButton;
-    private View view;
-
+    private Button stateButton;
+    private static final String cameraPermission = Manifest.permission.CAMERA;
+    private CoordinatorLayout coordinatorLayout1;
+    private Snackbar snackbar;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_payment_activity, container, false);
-        getActivity().setTitle("Payment");
+    public void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.accept_payment);
+        setTitle(R.string.acceptTitle);
+
         initViews();
         setListeners();
-
         setUpQReader();
 
-        return view;
+        Intent intent = getIntent();
+        String amountReceived = intent.getExtras().getString("amountReceived","");
+        AmountView.setText(amountReceived);
+
     }
 
     private void initViews(){
 
 
-
         //second layout views
-        textView      = (TextView)view.findViewById(R.id.code_info);
-        stateButton   = (Button)view.findViewById(R.id.btn_start_stop);
-        restartButton = (Button)view.findViewById(R.id.btn_restart_activity);
-        surfaceView   = (SurfaceView)view.findViewById(R.id.camera_view);
+        AmountView    = (TextView)findViewById(R.id.code_info);
+        infoView      = (TextView)findViewById(R.id.info2);
+        stateButton   = (Button)findViewById(R.id.btn_start_stop);
+        surfaceView   = (SurfaceView)findViewById(R.id.camera_view);
+        coordinatorLayout1 = (CoordinatorLayout)findViewById(R.id.acceptPayment);
 
         stateButton.setVisibility(View.VISIBLE);
     }
@@ -62,29 +69,19 @@ public class AcceptPayment extends Fragment implements View.OnClickListener
 
         //second layout listeners
         stateButton.setOnClickListener(this);
-        restartButton.setOnClickListener(this);
+
     }
-    public void restartActivity()
-    {
-        Fragment CurrentFragment = getActivity().getSupportFragmentManager().findFragmentById(R.id.frame_container);
-        if (CurrentFragment instanceof AcceptPayment)
-        {
-            FragmentTransaction fragmentTransaction = (getActivity()).getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.detach(CurrentFragment);
-            fragmentTransaction.attach(CurrentFragment);
-            fragmentTransaction.commit();
-        }
-    }
+
     void setUpQReader()
     {
-        qrEader = new QREader.Builder(getActivity(), surfaceView, new QRDataListener() {
+        qrEader = new QREader.Builder(this, surfaceView, new QRDataListener() {
             @Override
             public void onDetected(final String data) {
                 Log.d("QR READER", "Value : " + data);
-                textView.post(new Runnable() {
+                infoView.post(new Runnable() {
                     @Override
                     public void run() {
-                        textView.setText(data);
+                        infoView.setText(data);
                     }
                 });
             }
@@ -100,25 +97,8 @@ public class AcceptPayment extends Fragment implements View.OnClickListener
         switch (v.getId())
         {
             case R.id.btn_start_stop:
-                if (preferences.getBoolean(SharedPreferencesConstants.hasCameraPer, false))
+                super.onBackPressed();
 
-                {
-                    if (qrEader.isCameraRunning())
-                    {
-                        stateButton.setText("Start Payment");
-                        qrEader.stop();
-                    }
-                    else
-                    {
-                        stateButton.setText("Stop Scanning");
-                        qrEader.start();
-                    }
-                }
-                break;
-
-            case R.id.btn_restart_activity:
-                restartActivity();
-                break;
 
         }
     }
@@ -137,4 +117,10 @@ public class AcceptPayment extends Fragment implements View.OnClickListener
         qrEader.initAndStart(surfaceView);
 
     }
+
+    @Override
+    public void onBackPressed(){
+        startActivity(new Intent(AcceptPayment.this, StartPayment.class));
+    }
+
 }

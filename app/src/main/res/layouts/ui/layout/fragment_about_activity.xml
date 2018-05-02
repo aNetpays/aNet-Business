@@ -1,12 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:weightSum="8"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/termsConditionsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="Terms and Conditions "
+        android:layout_weight="1"/>
 
     <TextView
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
-        android:layout_height="wrap_content"
+        android:id="@+id/privacyNoticeTextView"
         android:layout_width="wrap_content"
-        android:text="About"/>
+        android:layout_height="0dp"
+        android:text="Privacy Statement"
+        android:layout_weight="1"/>
 
+    <TextView
+        android:id="@+id/FAQTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="Frequently Asked Questions"
+        android:layout_weight="1" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/versionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Version Is :"
+                android:layout_gravity="end" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/VersionNumber"
+                android:text="1.0.0"
+                android:layout_gravity="start"
+                android:paddingStart="5dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

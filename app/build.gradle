@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
+    buildToolsVersion "27.0.3"
     defaultConfig {
         applicationId "in.anetpays.siddhant.anet_business"
         minSdkVersion 19
@@ -41,12 +42,9 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
@@ -55,8 +53,7 @@ dependencies {
     implementation 'com.mikepenz:fontawesome-typeface:4.7.0.1@aar'
     implementation 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
     implementation 'com.mikepenz:crossfader:1.5.1@aar'
-    implementation 'com.github.bumptech.glide:glide:3.8.0'
-    //glide
+    implementation 'com.github.bumptech.glide:glide:3.8.0' //glide
     implementation('com.mikepenz:materialdrawer:6.0.7@aar') {
         transitive = true
     }
@@ -68,9 +65,11 @@ dependencies {
     //dialog
     implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
     //lollipin
-    implementation ('com.github.omadahealth:lollipin:2.1.0@aar') {
+    implementation('com.github.omadahealth:lollipin:2.1.0@aar') {
         transitive = true
     }
+    //numberView
+    implementation project(':numberView')
 }
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
@@ -86,6 +85,9 @@ allprojects {
     repositories {
         maven{
             url "https://github.com/omadahealth/omada-nexus/raw/master/release"
+        }
+        maven{
+            url "https://jitpack.io"
         }
         jcenter()
 
